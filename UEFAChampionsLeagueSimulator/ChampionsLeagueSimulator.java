@@ -4281,7 +4281,6 @@ public class ChampionsLeagueSimulator {
 		for (int i = 0; i < Final.size(); i++) {
 			
 			Final.get(i).setScoredGoalsCount(0);
-			Final.get(i).setScoredGoalsCount(0);
 		}
 		
 		
