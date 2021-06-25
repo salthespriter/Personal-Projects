@@ -16,7 +16,7 @@ public class FootballClub extends Club {
 	private int receivedGoalsCount;
 	private int points;
 	private int matchesPlayed;
-	private int scoredAwayGoals;
+	//private int scoredAwayGoals;
 	    
 	// getter for number of wins
 	public int getWinCount() {
@@ -53,10 +53,10 @@ public class FootballClub extends Club {
 	    return matchesPlayed;
 	}
 	    
-	// getter for number of away goals scored
-	public int getScoredAwayGoals() {
-		return scoredAwayGoals;
-	}
+//	// getter for number of away goals scored
+//	public int getScoredAwayGoals() {
+//		return scoredAwayGoals;
+//	}
 	    
 	// setter for number of wins
 	public void setWinCount(int i) {
@@ -93,8 +93,8 @@ public class FootballClub extends Club {
 		matchesPlayed = i;
 	}
 	     
-	// setter for number of away goals scored
-	public void setScoredAwayGoals(int i) {
-		scoredAwayGoals = i;
-	}
+//	// setter for number of away goals scored
+//	public void setScoredAwayGoals(int i) {
+//		scoredAwayGoals = i;
+//	}
 }

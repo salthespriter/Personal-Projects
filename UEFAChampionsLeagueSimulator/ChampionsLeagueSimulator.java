@@ -54,7 +54,7 @@ public class ChampionsLeagueSimulator {
 				"Russia", "France", "Belgium", "Germany", "Turkey", "Denmark", "France", "Hungary"};
 			
 		// creates list of seed1 ratings
-		Integer[] seed1ratings = {95, 86, 95, 93, 92, 94, 95, 89, 94, 89, 86, 90, 86, 86, 85, 84};
+		Integer[] seed1ratings = {95, 86, 95, 93, 92, 94, 95, 89, 94, 89, 86, 92, 86, 86, 85, 84};
 		
 		// creates list of seed2 ratings
 		Integer[] seed2ratings = {80, 82, 81, 79, 78, 75, 82, 75, 78, 81, 77, 81, 76, 75, 77, 75};
@@ -2046,8 +2046,8 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							// set away club's away goals scored setter to (getter away goals scored + away goals scored in match)
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
+//							// set away club's away goals scored setter to (getter away goals scored + away goals scored in match)
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
 						}
 					}
 				}
@@ -2088,26 +2088,26 @@ public class ChampionsLeagueSimulator {
 		// else they are tied on aggregate
 		else {
 					
-			// if club 1 scored more away goals than club 2
-			if (RO16_D1.get(0).getScoredAwayGoals() > RO16_D1.get(1).getScoredAwayGoals()) {
-						
-				// club 1 advances to the quarter-finals
-				System.out.println("\n" + RO16_D1.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-
-				// add club 1 to ArrayList QF_Clubs
-				QF_Clubs.add(RO16_D1.get(0));
-			}
-			// else if club 1 scored less away goals than club 2
-			else if (RO16_D1.get(0).getScoredAwayGoals() < RO16_D1.get(1).getScoredAwayGoals()) {
-						
-				// club 2 advances to the quarter-finals
-				System.out.println("\n" + RO16_D1.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				// add club 2 to ArrayList QF_Clubs
-				QF_Clubs.add(RO16_D1.get(1));
-			}
-			// else they both have the same amount of away goals
-			else {
+//			// if club 1 scored more away goals than club 2
+//			if (RO16_D1.get(0).getScoredAwayGoals() > RO16_D1.get(1).getScoredAwayGoals()) {
+//						
+//				// club 1 advances to the quarter-finals
+//				System.out.println("\n" + RO16_D1.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//
+//				// add club 1 to ArrayList QF_Clubs
+//				QF_Clubs.add(RO16_D1.get(0));
+//			}
+//			// else if club 1 scored less away goals than club 2
+//			else if (RO16_D1.get(0).getScoredAwayGoals() < RO16_D1.get(1).getScoredAwayGoals()) {
+//						
+//				// club 2 advances to the quarter-finals
+//				System.out.println("\n" + RO16_D1.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				// add club 2 to ArrayList QF_Clubs
+//				QF_Clubs.add(RO16_D1.get(1));
+//			}
+//			// else they both have the same amount of away goals
+//			else {
 				
 				// choose a random number between 0 and 1 (50% chance)
 				Random rand = new Random();
@@ -2118,7 +2118,7 @@ public class ChampionsLeagueSimulator {
 				
 				// add random club to ArrayList QF_Clubs
 				QF_Clubs.add(RO16_D1.get(pen_index));	
-			}
+			//}
 		}
 			
 			
@@ -2213,7 +2213,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);	
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);	
 						}
 					}
 				}
@@ -2247,19 +2247,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D2.get(0).getScoredAwayGoals() > RO16_D2.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D2.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D2.get(0));
-			}
-			else if (RO16_D2.get(0).getScoredAwayGoals() < RO16_D2.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D2.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D2.get(1));
-			}
-			else {
+//			if (RO16_D2.get(0).getScoredAwayGoals() > RO16_D2.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D2.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D2.get(0));
+//			}
+//			else if (RO16_D2.get(0).getScoredAwayGoals() < RO16_D2.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D2.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D2.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -2267,7 +2267,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D2.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D2.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -2362,7 +2362,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
 						}
 					}
 				}
@@ -2396,19 +2396,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D3.get(0).getScoredAwayGoals() > RO16_D3.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D3.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D3.get(0));
-			}
-			else if (RO16_D3.get(0).getScoredAwayGoals() < RO16_D3.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D3.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D3.get(1));
-			}
-			else {
+//			if (RO16_D3.get(0).getScoredAwayGoals() > RO16_D3.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D3.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D3.get(0));
+//			}
+//			else if (RO16_D3.get(0).getScoredAwayGoals() < RO16_D3.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D3.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D3.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -2416,7 +2416,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D3.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D3.get(pen_index));	
-			}
+			//}
 		}
 	
 		
@@ -2511,7 +2511,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);
 						}
 					}
 				}
@@ -2545,19 +2545,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D4.get(0).getScoredAwayGoals() > RO16_D4.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D4.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D4.get(0));
-			}
-			else if (RO16_D4.get(0).getScoredAwayGoals() < RO16_D4.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D4.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D4.get(1));
-			}
-			else {
+//			if (RO16_D4.get(0).getScoredAwayGoals() > RO16_D4.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D4.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D4.get(0));
+//			}
+//			else if (RO16_D4.get(0).getScoredAwayGoals() < RO16_D4.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D4.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D4.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -2565,7 +2565,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D4.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D4.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -2660,7 +2660,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
 						}
 					}
 				}
@@ -2694,19 +2694,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D5.get(0).getScoredAwayGoals() > RO16_D5.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D5.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D5.get(0));
-			}
-			else if (RO16_D5.get(0).getScoredAwayGoals() < RO16_D5.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D5.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D5.get(1));
-			}
-			else {
+//			if (RO16_D5.get(0).getScoredAwayGoals() > RO16_D5.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D5.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D5.get(0));
+//			}
+//			else if (RO16_D5.get(0).getScoredAwayGoals() < RO16_D5.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D5.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D5.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -2714,7 +2714,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D5.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D5.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -2809,7 +2809,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
+//							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
 						}
 					}
 				}
@@ -2844,19 +2844,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D6.get(0).getScoredAwayGoals() > RO16_D6.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D6.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D6.get(0));
-			}
-			else if (RO16_D6.get(0).getScoredAwayGoals() < RO16_D6.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D6.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D6.get(1));
-			}
-			else {
+//			if (RO16_D6.get(0).getScoredAwayGoals() > RO16_D6.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D6.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D6.get(0));
+//			}
+//			else if (RO16_D6.get(0).getScoredAwayGoals() < RO16_D6.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D6.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D6.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -2864,7 +2864,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D6.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D6.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -2959,7 +2959,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
 						}
 					}
 				}
@@ -2993,19 +2993,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D7.get(0).getScoredAwayGoals() > RO16_D7.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D7.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D7.get(0));
-			}
-			else if (RO16_D7.get(0).getScoredAwayGoals() < RO16_D7.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D7.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D7.get(1));
-			}
-			else {
+//			if (RO16_D7.get(0).getScoredAwayGoals() > RO16_D7.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D7.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D7.get(0));
+//			}
+//			else if (RO16_D7.get(0).getScoredAwayGoals() < RO16_D7.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D7.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D7.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3013,7 +3013,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D7.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D7.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3108,7 +3108,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);						
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);						
 						}
 					}
 				}
@@ -3142,19 +3142,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (RO16_D8.get(0).getScoredAwayGoals() > RO16_D8.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D8.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
-				
-				QF_Clubs.add(RO16_D8.get(0));
-			}
-			else if (RO16_D8.get(0).getScoredAwayGoals() < RO16_D8.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + RO16_D8.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
-				
-				QF_Clubs.add(RO16_D8.get(1));
-			}
-			else {
+//			if (RO16_D8.get(0).getScoredAwayGoals() > RO16_D8.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D8.get(0).getName() + " advances to the Quarter-finals on away goals!" +"\n");
+//				
+//				QF_Clubs.add(RO16_D8.get(0));
+//			}
+//			else if (RO16_D8.get(0).getScoredAwayGoals() < RO16_D8.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + RO16_D8.get(1).getName() + " advances to the Quarter-finals on away goals!" + "\n");
+//				
+//				QF_Clubs.add(RO16_D8.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3162,7 +3162,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + RO16_D8.get(pen_index).getName() + " advances to the Quarter-finals on penalties!" + "\n");
 				
 				QF_Clubs.add(RO16_D8.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3277,10 +3277,10 @@ public class ChampionsLeagueSimulator {
 			QF_D3.get(i).setScoredGoalsCount(0);
 			QF_D4.get(i).setScoredGoalsCount(0);
 
-			QF_D1.get(i).setScoredAwayGoals(0);
-			QF_D2.get(i).setScoredAwayGoals(0);
-			QF_D3.get(i).setScoredAwayGoals(0);
-			QF_D4.get(i).setScoredAwayGoals(0);
+//			QF_D1.get(i).setScoredAwayGoals(0);
+//			QF_D2.get(i).setScoredAwayGoals(0);
+//			QF_D3.get(i).setScoredAwayGoals(0);
+//			QF_D4.get(i).setScoredAwayGoals(0);
 		}
 		
 		
@@ -3379,7 +3379,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
 						}
 					}
 				}
@@ -3413,19 +3413,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (QF_D1.get(0).getScoredAwayGoals() > QF_D1.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D1.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
-				
-				SF_Left.add(QF_D1.get(0));
-			}
-			else if (QF_D1.get(0).getScoredAwayGoals() < QF_D1.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D1.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
-				
-				SF_Left.add(QF_D1.get(1));
-			}
-			else {
+//			if (QF_D1.get(0).getScoredAwayGoals() > QF_D1.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D1.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
+//				
+//				SF_Left.add(QF_D1.get(0));
+//			}
+//			else if (QF_D1.get(0).getScoredAwayGoals() < QF_D1.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D1.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
+//				
+//				SF_Left.add(QF_D1.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3433,7 +3433,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + QF_D1.get(pen_index).getName() + " advances to the Semi-finals on penalties!" + "\n");
 				
 				SF_Left.add(QF_D1.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3528,7 +3528,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);					
 						}
 					}
 				}
@@ -3562,19 +3562,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (QF_D2.get(0).getScoredAwayGoals() > QF_D2.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D2.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
-				
-				SF_Left.add(QF_D2.get(0));
-			}
-			else if (QF_D2.get(0).getScoredAwayGoals() < QF_D2.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D2.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
-				
-				SF_Left.add(QF_D2.get(1));
-			}
-			else {
+//			if (QF_D2.get(0).getScoredAwayGoals() > QF_D2.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D2.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
+//				
+//				SF_Left.add(QF_D2.get(0));
+//			}
+//			else if (QF_D2.get(0).getScoredAwayGoals() < QF_D2.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D2.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
+//				
+//				SF_Left.add(QF_D2.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3582,7 +3582,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + QF_D2.get(pen_index).getName() + " advances to the Semi-finals on penalties!" + "\n");
 				
 				SF_Left.add(QF_D2.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3677,7 +3677,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);			
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);			
 						}
 					}
 				}
@@ -3712,19 +3712,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (QF_D3.get(0).getScoredAwayGoals() > QF_D3.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D3.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
-				
-				SF_Right.add(QF_D3.get(0));
-			}
-			else if (QF_D3.get(0).getScoredAwayGoals() < QF_D3.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D3.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
-				
-				SF_Right.add(QF_D3.get(1));
-			}
-			else {
+//			if (QF_D3.get(0).getScoredAwayGoals() > QF_D3.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D3.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
+//				
+//				SF_Right.add(QF_D3.get(0));
+//			}
+//			else if (QF_D3.get(0).getScoredAwayGoals() < QF_D3.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D3.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
+//				
+//				SF_Right.add(QF_D3.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3732,7 +3732,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + QF_D3.get(pen_index).getName() + " advances to the Semi-finals on penalties!" + "\n");
 				
 				SF_Right.add(QF_D3.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3827,7 +3827,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);		
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);		
 						}
 					}
 				}
@@ -3862,19 +3862,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (QF_D4.get(0).getScoredAwayGoals() > QF_D4.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D4.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
-				
-				SF_Right.add(QF_D4.get(0));
-			}
-			else if (QF_D4.get(0).getScoredAwayGoals() < QF_D4.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + QF_D4.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
-				
-				SF_Right.add(QF_D4.get(1));
-			}
-			else {
+//			if (QF_D4.get(0).getScoredAwayGoals() > QF_D4.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D4.get(0).getName() + " advances to the Semi-finals on away goals!" +"\n");
+//				
+//				SF_Right.add(QF_D4.get(0));
+//			}
+//			else if (QF_D4.get(0).getScoredAwayGoals() < QF_D4.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + QF_D4.get(1).getName() + " advances to the Semi-finals on away goals!" + "\n");
+//				
+//				SF_Right.add(QF_D4.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -3882,7 +3882,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + QF_D4.get(pen_index).getName() + " advances to the Semi-finals on penalties!" + "\n");
 				
 				SF_Right.add(QF_D4.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -3934,8 +3934,8 @@ public class ChampionsLeagueSimulator {
 			SF_Left.get(i).setScoredGoalsCount(0);
 			SF_Right.get(i).setScoredGoalsCount(0);
 
-			SF_Left.get(i).setScoredAwayGoals(0);
-			SF_Right.get(i).setScoredAwayGoals(0);
+//			SF_Left.get(i).setScoredAwayGoals(0);
+//			SF_Right.get(i).setScoredAwayGoals(0);
 		}
 		
 		
@@ -4033,7 +4033,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);				
 						}
 					}
 				}
@@ -4067,19 +4067,19 @@ public class ChampionsLeagueSimulator {
 		}
 		else {
 					
-			if (SF_Left.get(0).getScoredAwayGoals() > SF_Left.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + SF_Left.get(0).getName() + " advances to the Final on away goals!" +"\n");
-				
-				Final.add(SF_Left.get(0));
-			}
-			else if (SF_Left.get(0).getScoredAwayGoals() < SF_Left.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + SF_Left.get(1).getName() + " advances to the Final on away goals!" + "\n");
-				
-				Final.add(SF_Left.get(1));
-			}
-			else {
+//			if (SF_Left.get(0).getScoredAwayGoals() > SF_Left.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + SF_Left.get(0).getName() + " advances to the Final on away goals!" +"\n");
+//				
+//				Final.add(SF_Left.get(0));
+//			}
+//			else if (SF_Left.get(0).getScoredAwayGoals() < SF_Left.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + SF_Left.get(1).getName() + " advances to the Final on away goals!" + "\n");
+//				
+//				Final.add(SF_Left.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -4087,7 +4087,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + SF_Left.get(pen_index).getName() + " advances to the Final on penalties!" + "\n");
 				
 				Final.add(SF_Left.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -4182,7 +4182,7 @@ public class ChampionsLeagueSimulator {
 							home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 							away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
 							
-							away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);						
+							//away.setScoredAwayGoals(away.getScoredAwayGoals() + away_goals);						
 						}
 					}
 				}
@@ -4215,20 +4215,20 @@ public class ChampionsLeagueSimulator {
 			Final.add(SF_Right.get(1));
 		}
 		else {
-					
-			if (SF_Right.get(0).getScoredAwayGoals() > SF_Right.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + SF_Right.get(0).getName() + " advances to the Final on away goals!" +"\n");
-				
-				Final.add(SF_Right.get(0));
-			}
-			else if (SF_Right.get(0).getScoredAwayGoals() < SF_Right.get(1).getScoredAwayGoals()) {
-						
-				System.out.println("\n" + SF_Right.get(1).getName() + " advances to the Final on away goals!" + "\n");
-				
-				Final.add(SF_Right.get(1));
-			}
-			else {
+//					
+//			if (SF_Right.get(0).getScoredAwayGoals() > SF_Right.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + SF_Right.get(0).getName() + " advances to the Final on away goals!" +"\n");
+//				
+//				Final.add(SF_Right.get(0));
+//			}
+//			else if (SF_Right.get(0).getScoredAwayGoals() < SF_Right.get(1).getScoredAwayGoals()) {
+//						
+//				System.out.println("\n" + SF_Right.get(1).getName() + " advances to the Final on away goals!" + "\n");
+//				
+//				Final.add(SF_Right.get(1));
+//			}
+//			else {
 				
 				Random rand = new Random();
 				int pen_index = rand.nextInt(2);
@@ -4236,7 +4236,7 @@ public class ChampionsLeagueSimulator {
 				System.out.println("\n" + SF_Right.get(pen_index).getName() + " advances to the Final on penalties!" + "\n");
 				
 				Final.add(SF_Right.get(pen_index));	
-			}
+			//}
 		}
 		
 		
@@ -4360,13 +4360,9 @@ public class ChampionsLeagueSimulator {
 				}
 				
 				
-				wait(2000);
-				System.out.println("\n" + home + " " + home_goals + " - " + away_goals + " " + away);
-				
-				
 				home.setScoredGoalsCount(home.getScoredGoalsCount() + home_goals);
 				away.setScoredGoalsCount(away.getScoredGoalsCount() + away_goals);
-											
+					
 				
 				break;
 			}			
@@ -4378,9 +4374,8 @@ public class ChampionsLeagueSimulator {
 			
 		
 		// *Display which club wins the Champions League this season*
-		wait(1000);
-		System.out.println("\n" + "\n" + "Final Score: " + Final.get(0).getName() + " " + Final.get(0).getScoredGoalsCount() + " - " + Final.get(1).getScoredGoalsCount() + " " + Final.get(1).getName() + "\n");
-		System.out.println("\n");
+		wait(4000);
+		System.out.println("\n" + "Final Score: " + Final.get(0).getName() + " " + Final.get(0).getScoredGoalsCount() + " - " + Final.get(1).getScoredGoalsCount() + " " + Final.get(1).getName() + "\n");
 		
 		wait(2000);
 
