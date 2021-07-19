@@ -702,80 +702,147 @@ public class GUI {
 				title2.add(new Text(input_email.getText()).addStyle(style));
 				document.add(title2);
 
-				Paragraph title3 = new Paragraph();
-				addEmptyLine(title3, 1);
-				title3.add(new Text("Current Address: ").addStyle(style).setBold());
-				title3.add(new Text(input_address.getText() + " • " + 
-						input_city.getText() + ", " + input_state.getText() + " " + input_zip.getText() + 
-						" • " + input_phone.getText()).addStyle(style));
-				document.add(title3);
+				if (input_address.getText().isEmpty() == false) {
+					
+					Paragraph title3 = new Paragraph();
+					addEmptyLine(title3, 1);
+					title3.add(new Text("Current Address: ").addStyle(style).setBold());
+					title3.add(new Text(input_address.getText() + " • " + 
+							input_city.getText() + ", " + input_state.getText() + " " + input_zip.getText() + 
+							" • " + input_phone.getText()).addStyle(style));
+					document.add(title3);
 
-				Paragraph title4 = new Paragraph();
-				title4.add(new Text("----------------------------------------------------------------------------------------------------------------------------------").setBold());
-				document.add(title4);
+					Paragraph title4 = new Paragraph();
+					title4.add(new Text("----------------------------------------------------------------------------------------------------------------------------------").setBold());
+					document.add(title4);
+				}
 				
 				
 				
 				// objective being added      
-				Paragraph objective = new Paragraph();
-				addEmptyLine(objective, 1);
-				objective.add(new Text("OBJECTIVE").addStyle(style).setBold());
-				objective.add(new Tab());
-				objective.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				objective.add(new Text(input_objective.getText()).addStyle(style));
-				document.add(objective);
+				// if they know what their objective is
+				if (input_objective.getText().isEmpty() == false) {
+				
+					Paragraph objective = new Paragraph();
+					addEmptyLine(objective, 1);
+					objective.add(new Text("OBJECTIVE").addStyle(style).setBold());
+					objective.add(new Tab());
+					objective.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					objective.add(new Text(input_objective.getText()).addStyle(style));
+					document.add(objective);
+				}
 				
 				
 				
 				// education being added    
-				// university being added
-				Paragraph education1 = new Paragraph();
-				addEmptyLine(education1, 1);
-				education1.add(new Text("EDUCATION").addStyle(style).setBold());
-				education1.add(new Tab());
-				education1.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education1.add(new Text(input_university.getText()).addStyle(style).setBold());
-				education1.add(new Text(", " + input_university_city.getText() + ", " + input_university_state.getText()).addStyle(style));
-				education1.add(new Tab());
-				education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
-				education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
-				document.add(education1);    
+				// if they haven't went to university but have gone to high school
+				if (input_university.getText().isEmpty() == true && input_highschool.getText().isEmpty() == false) {
 
-				Paragraph education2 = new Paragraph();
-				education2.add(new Tab());
-				education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education2.add(new Text(input_university_degree.getText()).addStyle(style)).setItalic();
-				document.add(education2);
+					// high school being added
+					Paragraph education4 = new Paragraph();
+					addEmptyLine(education4, 1);
+					education4.add(new Text("EDUCATION").addStyle(style).setBold());					
+					education4.add(new Tab());
+					education4.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education4.add(new Text(input_highschool.getText()).addStyle(style).setBold());
+					education4.add(new Text(", " + input_highschool_city.getText() + ", " + input_highschool_state.getText()).addStyle(style));
+					education4.add(new Tab());
+					education4.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+					education4.add(new Text(input_highschool_graduationdate.getText()).addStyle(style));
+					document.add(education4);    
 
-				Paragraph education3 = new Paragraph();
-				education3.add(new Tab());
-				education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
-				document.add(education3);
+					Paragraph education5 = new Paragraph();
+					education5.add(new Tab());
+					education5.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education5.add(new Text(input_highschool_diploma.getText() + " Diploma").addStyle(style).setItalic());
+					document.add(education5); 
 
-				// high school being added
-				Paragraph education4 = new Paragraph();
-				addEmptyLine(education4, 1);
-				education4.add(new Tab());
-				education4.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education4.add(new Text(input_highschool.getText()).addStyle(style).setBold());
-				education4.add(new Text(", " + input_highschool_city.getText() + ", " + input_highschool_state.getText()).addStyle(style));
-				education4.add(new Tab());
-				education4.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
-				education4.add(new Text(input_highschool_graduationdate.getText()).addStyle(style));
-				document.add(education4);    
+					Paragraph education6 = new Paragraph();
+					education6.add(new Tab());
+					education6.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education6.add(new Text("GPA: " + input_highschool_gpa.getText()).addStyle(style));
+					document.add(education6); 		
+				}
+				// if they went to university but didn't go to high school
+				else if (input_university.getText().isEmpty() == false && input_highschool.getText().isEmpty() == true) {
+						
+						// university being added
+						Paragraph education1 = new Paragraph();
+						addEmptyLine(education1, 1);
+						education1.add(new Text("EDUCATION").addStyle(style).setBold());
+						education1.add(new Tab());
+						education1.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						education1.add(new Text(input_university.getText()).addStyle(style).setBold());
+						education1.add(new Text(", " + input_university_city.getText() + ", " + input_university_state.getText()).addStyle(style));
+						education1.add(new Tab());
+						education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+						education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
+						document.add(education1);   
+						
+						Paragraph education2 = new Paragraph();
+						education2.add(new Tab());
+						education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						education2.add(new Text(input_university_degree.getText()).addStyle(style)).setItalic();
+						document.add(education2);
 
-				Paragraph education5 = new Paragraph();
-				education5.add(new Tab());
-				education5.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education5.add(new Text(input_highschool_diploma.getText() + " Diploma").addStyle(style).setItalic());
-				document.add(education5); 
+						Paragraph education3 = new Paragraph();
+						education3.add(new Tab());
+						education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
+						document.add(education3);	
+				}
+				// if they went to both university and high school
+				else if (input_university.getText().isEmpty() == false && input_highschool.getText().isEmpty() == false) {
+					
+					// university being added
+					Paragraph education1 = new Paragraph();
+					addEmptyLine(education1, 1);
+					education1.add(new Text("EDUCATION").addStyle(style).setBold());
+					education1.add(new Tab());
+					education1.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education1.add(new Text(input_university.getText()).addStyle(style).setBold());
+					education1.add(new Text(", " + input_university_city.getText() + ", " + input_university_state.getText()).addStyle(style));
+					education1.add(new Tab());
+					education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+					education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
+					document.add(education1);   
+					
+					Paragraph education2 = new Paragraph();
+					education2.add(new Tab());
+					education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education2.add(new Text(input_university_degree.getText()).addStyle(style)).setItalic();
+					document.add(education2);
 
-				Paragraph education6 = new Paragraph();
-				education6.add(new Tab());
-				education6.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				education6.add(new Text("GPA: " + input_highschool_gpa.getText()).addStyle(style));
-				document.add(education6); 
+					Paragraph education3 = new Paragraph();
+					education3.add(new Tab());
+					education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
+					document.add(education3);	
+					
+					// high school being added
+					Paragraph education4 = new Paragraph();
+					addEmptyLine(education4, 1);
+					education4.add(new Tab());
+					education4.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education4.add(new Text(input_highschool.getText()).addStyle(style).setBold());
+					education4.add(new Text(", " + input_highschool_city.getText() + ", " + input_highschool_state.getText()).addStyle(style));
+					education4.add(new Tab());
+					education4.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+					education4.add(new Text(input_highschool_graduationdate.getText()).addStyle(style));
+					document.add(education4);    
+
+					Paragraph education5 = new Paragraph();
+					education5.add(new Tab());
+					education5.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education5.add(new Text(input_highschool_diploma.getText() + " Diploma").addStyle(style).setItalic());
+					document.add(education5); 
+
+					Paragraph education6 = new Paragraph();
+					education6.add(new Tab());
+					education6.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education6.add(new Text("GPA: " + input_highschool_gpa.getText()).addStyle(style));
+					document.add(education6);
+				}
 				
 				
 				
@@ -789,69 +856,73 @@ public class GUI {
 				
 				
 				// work being added    
-				// first job being added
-				Paragraph work = new Paragraph();
-				addEmptyLine(work, 1);
-				work.add(new Text("WORK").addStyle(style).setBold());
-				work.add(new Tab());
-				work.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				work.add(new Text(jobs[0]).addStyle(style).setBold());
-				work.add(new Text(", " + cities[0] + ", " + states[0]).addStyle(style));
-				work.add(new Tab());
-				work.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
-				work.add(new Text(dates[0]).addStyle(style));
-				document.add(work);
+				// if they have worked before
+				if (input_jobs.getText().isEmpty() == false) {
 
-				Paragraph work2 = new Paragraph();
-				work2.add(new Text("EXPERIENCE").addStyle(style).setBold());
-				work2.add(new Tab());
-				work2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				work2.add(new Text(positions[0]).addStyle(style).setItalic());
-				document.add(work2); 
+					// first job being added
+					Paragraph work = new Paragraph();
+					addEmptyLine(work, 1);
+					work.add(new Text("WORK").addStyle(style).setBold());
+					work.add(new Tab());
+					work.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					work.add(new Text(jobs[0]).addStyle(style).setBold());
+					work.add(new Text(", " + cities[0] + ", " + states[0]).addStyle(style));
+					work.add(new Tab());
+					work.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+					work.add(new Text(dates[0]).addStyle(style));
+					document.add(work);
 
-				Paragraph work3 = new Paragraph();    
-				String[] workcomplete = workdone[0].split("\\, ");        
-				for (int i = 0; i < workcomplete.length; i++) {
+					Paragraph work2 = new Paragraph();
+					work2.add(new Text("EXPERIENCE").addStyle(style).setBold());
+					work2.add(new Tab());
+					work2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					work2.add(new Text(positions[0]).addStyle(style).setItalic());
+					document.add(work2); 
 
-					work3 = new Paragraph();
-					work3.add(new Tab());
-					work3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					work3.add(new Text(" • " + workcomplete[i]));
-					document.add(work3);
-				}
+					Paragraph work3 = new Paragraph();    
+					String[] workcomplete = workdone[0].split("\\, ");        
+					for (int i = 0; i < workcomplete.length; i++) {
 
-				// rest of jobs being added
-				Paragraph restofjobs = new Paragraph();
-				Paragraph restofjobs2 = new Paragraph();
-				Paragraph restofjobs3 = new Paragraph();
-				for (int i = 1; i < jobs.length; i++) {
+						work3 = new Paragraph();
+						work3.add(new Tab());
+						work3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						work3.add(new Text(" • " + workcomplete[i]));
+						document.add(work3);
+					}
 
-					restofjobs = new Paragraph();
-					addEmptyLine(restofjobs, 1);
-					restofjobs.add(new Tab());
-					restofjobs.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					restofjobs.add(new Text(jobs[i]).addStyle(style).setBold());
-					restofjobs.add(new Text(", " + cities[i] + ", " + states[i]).addStyle(style));
-					restofjobs.add(new Tab());
-					restofjobs.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
-					restofjobs.add(new Text(dates[i]).addStyle(style));
-					document.add(restofjobs);
+					// rest of jobs being added
+					Paragraph restofjobs = new Paragraph();
+					Paragraph restofjobs2 = new Paragraph();
+					Paragraph restofjobs3 = new Paragraph();
+					for (int i = 1; i < jobs.length; i++) {
 
-					restofjobs2 = new Paragraph();
-					restofjobs2.add(new Tab());
-					restofjobs2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					restofjobs2.add(new Text(positions[i]).addStyle(style).setItalic());
-					document.add(restofjobs2); 
+						restofjobs = new Paragraph();
+						addEmptyLine(restofjobs, 1);
+						restofjobs.add(new Tab());
+						restofjobs.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						restofjobs.add(new Text(jobs[i]).addStyle(style).setBold());
+						restofjobs.add(new Text(", " + cities[i] + ", " + states[i]).addStyle(style));
+						restofjobs.add(new Tab());
+						restofjobs.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+						restofjobs.add(new Text(dates[i]).addStyle(style));
+						document.add(restofjobs);
 
-					String[] restofjobscomplete = workdone[i].split("\\, ");
-					for (int j = 0; j < restofjobscomplete.length; j++) {
+						restofjobs2 = new Paragraph();
+						restofjobs2.add(new Tab());
+						restofjobs2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						restofjobs2.add(new Text(positions[i]).addStyle(style).setItalic());
+						document.add(restofjobs2); 
 
-						restofjobs3 = new Paragraph();
-						restofjobs3.add(new Tab());
-						restofjobs3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-						restofjobs3.add(new Text("• " + restofjobscomplete[j]));
-						document.add(restofjobs3);
-					}      
+						String[] restofjobscomplete = workdone[i].split("\\, ");
+						for (int j = 0; j < restofjobscomplete.length; j++) {
+
+							restofjobs3 = new Paragraph();
+							restofjobs3.add(new Tab());
+							restofjobs3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+							restofjobs3.add(new Text("• " + restofjobscomplete[j]));
+							document.add(restofjobs3);
+						}      
+					}
 				}
 				
 				
@@ -862,83 +933,351 @@ public class GUI {
 				String[] otherskills = input_otherskills.getText().split("\\n");
 				
 				
-				// technology skills being added         
-				Paragraph techskills = new Paragraph();
-				addEmptyLine(techskills, 1);
-				techskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
-				techskills.add(new Tab());
-				techskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				techskills.add(new Text("Technology Skills -").addStyle(style).setBold());
-				document.add(techskills);
+				// skills being added         
+				// if they have technology skills, language skills, and other skills
+				if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == false) {
+					
+					// technology skills being added
+					Paragraph techskills = new Paragraph();
+					addEmptyLine(techskills, 1);
+					techskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					techskills.add(new Tab());
+					techskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills.add(new Text("Technology Skills -").addStyle(style).setBold());
+					document.add(techskills);
 
-				Paragraph techskills2 = new Paragraph();
-				techskills2.add(new Text("SKILLS").addStyle(style).setBold());
-				techskills2.add(new Tab());
-				techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				techskills2.add(new Text("------------------------").addStyle(style).setBold());
-				document.add(techskills2);
-				
-				// all tech skills being added
-				Paragraph techskills3 = new Paragraph();   
-				for (int i = 0; i < technologyskills.length; i++) {
+					Paragraph techskills2 = new Paragraph();
+					techskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					techskills2.add(new Tab());
+					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(techskills2);
+					
+					// all tech skills being added
+					Paragraph techskills3 = new Paragraph();   
+					for (int i = 0; i < technologyskills.length; i++) {
 
-					techskills3 = new Paragraph();
-					techskills3.add(new Tab());
-					techskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
-					document.add(techskills3);
+						techskills3 = new Paragraph();
+						techskills3.add(new Tab());
+						techskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
+						document.add(techskills3);
+					}
+					
+					
+					
+					// language skills being added    
+					Paragraph langskills = new Paragraph();
+					addEmptyLine(langskills, 1);
+					langskills.add(new Tab());
+					langskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills.add(new Text("Language Skills -").addStyle(style).setBold());
+					document.add(langskills);
+
+					Paragraph langskills2 = new Paragraph();
+					langskills2.add(new Tab());
+					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(langskills2);
+					
+					// all lang skills being added
+					Paragraph langskills3 = new Paragraph();
+					for (int i = 0; i < languageskills.length; i++) {
+
+						langskills3 = new Paragraph();
+						langskills3.add(new Tab());
+						langskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
+						document.add(langskills3);
+					}
+					
+					
+					
+					// other skills being added    
+					Paragraph other_skills = new Paragraph();
+					addEmptyLine(other_skills, 1);
+					other_skills.add(new Tab());
+					other_skills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills.add(new Text("Other Skills -").addStyle(style).setBold());
+					document.add(other_skills);
+
+					Paragraph other_skills2 = new Paragraph();
+					other_skills2.add(new Tab());
+					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(other_skills2);
+					
+					// all other skills being added
+					Paragraph other_skills3 = new Paragraph();
+					for (int i = 0; i < otherskills.length; i++) {
+
+						other_skills3 = new Paragraph();
+						other_skills3.add(new Tab());
+						other_skills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						other_skills3.add(new Text(" - " + otherskills[i]).addStyle(style));
+						document.add(other_skills3);
+					}
 				}
-				
-				
-				// language skills being added    
-				Paragraph langskills = new Paragraph();
-				addEmptyLine(langskills, 1);
-				langskills.add(new Tab());
-				langskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				langskills.add(new Text("Language Skills -").addStyle(style).setBold());
-				document.add(langskills);
+				// if they have technology skills and language skills but no other skills
+				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == true) {
+					
+					// technology skills being added
+					Paragraph techskills = new Paragraph();
+					addEmptyLine(techskills, 1);
+					techskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					techskills.add(new Tab());
+					techskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills.add(new Text("Technology Skills -").addStyle(style).setBold());
+					document.add(techskills);
 
-				Paragraph langskills2 = new Paragraph();
-				langskills2.add(new Tab());
-				langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				langskills2.add(new Text("------------------------").addStyle(style).setBold());
-				document.add(langskills2);
-				
-				// all lang skills being added
-				Paragraph langskills3 = new Paragraph();
-				for (int i = 0; i < languageskills.length; i++) {
+					Paragraph techskills2 = new Paragraph();
+					techskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					techskills2.add(new Tab());
+					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(techskills2);
+					
+					// all tech skills being added
+					Paragraph techskills3 = new Paragraph();   
+					for (int i = 0; i < technologyskills.length; i++) {
 
-					langskills3 = new Paragraph();
-					langskills3.add(new Tab());
-					langskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
-					document.add(langskills3);
+						techskills3 = new Paragraph();
+						techskills3.add(new Tab());
+						techskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
+						document.add(techskills3);
+					}
+					
+					
+					
+					// language skills being added    
+					Paragraph langskills = new Paragraph();
+					addEmptyLine(langskills, 1);
+					langskills.add(new Tab());
+					langskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills.add(new Text("Language Skills -").addStyle(style).setBold());
+					document.add(langskills);
+
+					Paragraph langskills2 = new Paragraph();
+					langskills2.add(new Tab());
+					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(langskills2);
+					
+					// all lang skills being added
+					Paragraph langskills3 = new Paragraph();
+					for (int i = 0; i < languageskills.length; i++) {
+
+						langskills3 = new Paragraph();
+						langskills3.add(new Tab());
+						langskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
+						document.add(langskills3);
+					}
 				}
-				
-				
-				// other skills being added    
-				Paragraph other_skills = new Paragraph();
-				addEmptyLine(other_skills, 1);
-				other_skills.add(new Tab());
-				other_skills.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				other_skills.add(new Text("Other Skills -").addStyle(style).setBold());
-				document.add(other_skills);
+				// if they have technology skills only
+				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == true) {
+					
+					// technology skills being added
+					Paragraph techskills = new Paragraph();
+					addEmptyLine(techskills, 1);
+					techskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					techskills.add(new Tab());
+					techskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills.add(new Text("Technology Skills -").addStyle(style).setBold());
+					document.add(techskills);
 
-				Paragraph other_skills2 = new Paragraph();
-				other_skills2.add(new Tab());
-				other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-				other_skills2.add(new Text("------------------------").addStyle(style).setBold());
-				document.add(other_skills2);
-				
-				// all other skills being added
-				Paragraph other_skills3 = new Paragraph();
-				for (int i = 0; i < otherskills.length; i++) {
+					Paragraph techskills2 = new Paragraph();
+					techskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					techskills2.add(new Tab());
+					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(techskills2);
+					
+					// all tech skills being added
+					Paragraph techskills3 = new Paragraph();   
+					for (int i = 0; i < technologyskills.length; i++) {
 
-					other_skills3 = new Paragraph();
-					other_skills3.add(new Tab());
-					other_skills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-					other_skills3.add(new Text(" - " + otherskills[i]).addStyle(style));
-					document.add(other_skills3);
+						techskills3 = new Paragraph();
+						techskills3.add(new Tab());
+						techskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
+						document.add(techskills3);
+					}
+				}
+				// if they have technology skills and other skills but no language skills
+				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == false) {
+					
+					// technology skills being added
+					Paragraph techskills = new Paragraph();
+					addEmptyLine(techskills, 1);
+					techskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					techskills.add(new Tab());
+					techskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills.add(new Text("Technology Skills -").addStyle(style).setBold());
+					document.add(techskills);
+
+					Paragraph techskills2 = new Paragraph();
+					techskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					techskills2.add(new Tab());
+					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					techskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(techskills2);
+					
+					// all tech skills being added
+					Paragraph techskills3 = new Paragraph();   
+					for (int i = 0; i < technologyskills.length; i++) {
+
+						techskills3 = new Paragraph();
+						techskills3.add(new Tab());
+						techskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
+						document.add(techskills3);
+					}
+					
+					
+					
+					// other skills being added    
+					Paragraph other_skills = new Paragraph();
+					addEmptyLine(other_skills, 1);
+					other_skills.add(new Tab());
+					other_skills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills.add(new Text("Other Skills -").addStyle(style).setBold());
+					document.add(other_skills);
+
+					Paragraph other_skills2 = new Paragraph();
+					other_skills2.add(new Tab());
+					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(other_skills2);
+					
+					// all other skills being added
+					Paragraph other_skills3 = new Paragraph();
+					for (int i = 0; i < otherskills.length; i++) {
+
+						other_skills3 = new Paragraph();
+						other_skills3.add(new Tab());
+						other_skills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						other_skills3.add(new Text(" - " + otherskills[i]).addStyle(style));
+						document.add(other_skills3);
+					}
+				}
+				// if they have language skills and other skills but no technology skills
+				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == false) {
+					
+					// language skills being added
+					Paragraph langskills = new Paragraph();
+					addEmptyLine(langskills, 1);
+					langskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					langskills.add(new Tab());
+					langskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills.add(new Text("Language Skills -").addStyle(style).setBold());
+					document.add(langskills);
+
+					Paragraph langskills2 = new Paragraph();
+					langskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					langskills2.add(new Tab());
+					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(langskills2);
+					
+					// all lang skills being added
+					Paragraph langskills3 = new Paragraph();
+					for (int i = 0; i < languageskills.length; i++) {
+
+						langskills3 = new Paragraph();
+						langskills3.add(new Tab());
+						langskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
+						document.add(langskills3);
+					}
+					
+					
+					
+					// other skills being added    
+					Paragraph other_skills = new Paragraph();
+					addEmptyLine(other_skills, 1);
+					other_skills.add(new Tab());
+					other_skills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills.add(new Text("Other Skills -").addStyle(style).setBold());
+					document.add(other_skills);
+
+					Paragraph other_skills2 = new Paragraph();
+					other_skills2.add(new Tab());
+					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(other_skills2);
+					
+					// all other skills being added
+					Paragraph other_skills3 = new Paragraph();
+					for (int i = 0; i < otherskills.length; i++) {
+
+						other_skills3 = new Paragraph();
+						other_skills3.add(new Tab());
+						other_skills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						other_skills3.add(new Text(" - " + otherskills[i]).addStyle(style));
+						document.add(other_skills3);
+					}
+				}
+				// if they have language skills only
+				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == true) {
+					
+					// language skills being added
+					Paragraph langskills = new Paragraph();
+					addEmptyLine(langskills, 1);
+					langskills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					langskills.add(new Tab());
+					langskills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills.add(new Text("Language Skills -").addStyle(style).setBold());
+					document.add(langskills);
+
+					Paragraph langskills2 = new Paragraph();
+					langskills2.add(new Text("SKILLS").addStyle(style).setBold());
+					langskills2.add(new Tab());
+					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					langskills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(langskills2);
+					
+					// all lang skills being added
+					Paragraph langskills3 = new Paragraph();
+					for (int i = 0; i < languageskills.length; i++) {
+
+						langskills3 = new Paragraph();
+						langskills3.add(new Tab());
+						langskills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
+						document.add(langskills3);
+					}
+				}
+				// if they have other skills only
+				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == false) {
+					
+					// other skills being added
+					Paragraph other_skills = new Paragraph();
+					addEmptyLine(other_skills, 1);
+					other_skills.add(new Text("PROFESSIONAL").addStyle(style).setBold());
+					other_skills.add(new Tab());
+					other_skills.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills.add(new Text("Other Skills -").addStyle(style).setBold());
+					document.add(other_skills);
+
+					Paragraph other_skills2 = new Paragraph();
+					other_skills2.add(new Text("SKILLS").addStyle(style).setBold());
+					other_skills2.add(new Tab());
+					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
+					document.add(other_skills2);
+					
+					// all other skills being added
+					Paragraph other_skills3 = new Paragraph();
+					for (int i = 0; i < otherskills.length; i++) {
+
+						other_skills3 = new Paragraph();
+						other_skills3.add(new Tab());
+						other_skills3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+						other_skills3.add(new Text(" - " + otherskills[i]).addStyle(style));
+						document.add(other_skills3);
+					}
 				}
 				
 				
