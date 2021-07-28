@@ -25,18 +25,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class GUI {	
-	
+
 	// private field of a JFrame object
 	private JFrame frame;
-	
+
 	// private field of width
 	private int width;
 	// private field of height
 	private int height;
-	
+
 	// private field of JFileChooser object
 	private JFileChooser chooser;
-	
+
 	// private fields of JLabel objects
 	private JLabel personalinfotitle;
 	private JLabel firstname;
@@ -47,10 +47,10 @@ public class GUI {
 	private JLabel zip;
 	private JLabel email;
 	private JLabel phone;
-	
+
 	private JLabel objectivetitle;
 	private JLabel objective;
-	
+
 	private JLabel educationtitle;
 	private JLabel university;
 	private JLabel university_city;
@@ -80,7 +80,7 @@ public class GUI {
 	private JLabel technologyskills;
 	private JLabel languageskills;
 	private JLabel otherskills;
-		
+
 	// private fields of JTextField objects
 	private static JTextField input_firstname;
 	private static JTextField input_lastname;
@@ -104,31 +104,31 @@ public class GUI {
 	private static JTextField input_highschool_graduationdate;
 	private static JTextField input_highschool_gpa;
 	private static JTextField input_highschool_diploma;
-	
+
 	// private fields of JTextArea and JScrollPane objects
 	private static JTextArea input_jobs;
 	private static JScrollPane scroll1;
-	
+
 	private static JTextArea input_positions;
 	private static JScrollPane scroll2;
 
 	private static JTextArea input_workdone;
 	private static JScrollPane scroll3;
-	
+
 	private static JTextArea input_dates;
 	private static JScrollPane scroll4;
-	
+
 	private static JTextArea input_workcity;
 	private static JScrollPane scroll5;
-	
+
 	private static JTextArea input_workstate;
 	private static JScrollPane scroll6;
-	
-	
+
+
 	private static JTextArea input_technologyskills;
 	private static JScrollPane scroll7;
-	
-	
+
+
 	private static JTextArea input_languageskills;
 	private static JScrollPane scroll8;
 
@@ -138,30 +138,30 @@ public class GUI {
 	// private fields of JButton objects
 	private JButton button1;
 	private JButton button2;
-	
-	
+
+
 	// GUI constructor
 	public GUI(int w, int h) {
-		
+
 		// set width to width given in constructor
 		width = w;
 		// set height to height given in constructor
 		height = h;		
-		
+
 		// set frame to new JFrame object created
 		frame = new JFrame();
-			
+
 		// set chooser to new JFileChooser object created
 		chooser = new JFileChooser();
 		chooser.setDialogType(JFileChooser.SAVE_DIALOG);
-		
-		
-		
+
+
+
 		// JLabel for personal info TITLE
 		personalinfotitle = new JLabel("PERSONAL INFORMATION");
 		personalinfotitle.setBounds(80, 20, 200, 20);
 		personalinfotitle.setFont(new Font("Gotham", Font.BOLD, 15));
-		
+
 		// JLabels for personal information
 		firstname = new JLabel("First name:");
 		firstname.setBounds(50, 50, 200, 20);
@@ -170,275 +170,275 @@ public class GUI {
 		lastname = new JLabel("Last name:");
 		lastname.setBounds(50, 80, 200, 20);
 		lastname.setFont(new Font("Open Sans", Font.BOLD, 12));
-			
+
 		address = new JLabel("Address:");
 		address.setBounds(50, 110, 200, 20);
 		address.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		city = new JLabel("City:");
 		city.setBounds(50, 140, 200, 20);
 		city.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		state = new JLabel("State:");
 		state.setBounds(50, 170, 200, 20);
 		state.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		zip = new JLabel("Zip Code:");
 		zip.setBounds(50, 200, 200, 20);
 		zip.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		email = new JLabel("Email:");
 		email.setBounds(50, 230, 200, 20);
 		email.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		phone = new JLabel("Phone Number:");
 		phone.setBounds(50, 260, 200, 20);
 		phone.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		
+
+
 		// JLabel for objective TITLE
 		objectivetitle = new JLabel("OBJECTIVE");
 		objectivetitle.setBounds(150, 310, 200, 20);
 		objectivetitle.setFont(new Font("Gotham", Font.BOLD, 15));
-		
+
 		// JLabel for objective
 		objective = new JLabel("Objective:");
 		objective.setBounds(50, 340, 200, 20);
 		objective.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		
+
+
 		// JLabel for education TITLE
 		educationtitle = new JLabel("EDUCATION");
 		educationtitle.setBounds(590, 20, 200, 20);
 		educationtitle.setFont(new Font("Gotham", Font.BOLD, 15));
-		
+
 		// JLabels for education
 		university = new JLabel("University:");
 		university.setBounds(400, 50, 200, 20);
 		university.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		university_city = new JLabel("City:");
 		university_city.setBounds(400, 80, 200, 20);
 		university_city.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		university_state = new JLabel("State:");
 		university_state.setBounds(670, 80, 200, 20);
 		university_state.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		university_graduationdate = new JLabel("Date of Graduation:");
 		university_graduationdate.setBounds(400, 120, 200, 20);
 		university_graduationdate.setFont(new Font("Open Sans", Font.BOLD, 12));
-	
+
 		university_gpa = new JLabel("GPA:");
 		university_gpa.setBounds(400, 150, 200, 20);
 		university_gpa.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		university_degree = new JLabel("Degree:");
 		university_degree.setBounds(670, 120, 200, 20);
 		university_degree.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		highschool = new JLabel("High School:");
 		highschool.setBounds(400, 220, 200, 20);
 		highschool.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		highschool_city = new JLabel("City:");
 		highschool_city.setBounds(400, 250, 200, 20);
 		highschool_city.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		highschool_state = new JLabel("State:");
 		highschool_state.setBounds(670, 250, 200, 20);
 		highschool_state.setFont(new Font("Open Sans", Font.BOLD, 12));
-			
+
 		highschool_graduationdate = new JLabel("Date of Graduation:");
 		highschool_graduationdate.setBounds(400, 290, 200, 20);
 		highschool_graduationdate.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		highschool_diploma = new JLabel("Diploma Type:");
 		highschool_diploma.setBounds(670, 290, 200, 20);
 		highschool_diploma.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		highschool_gpa = new JLabel("GPA:");
 		highschool_gpa.setBounds(400, 320, 200, 20);
 		highschool_gpa.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		
+
+
 		// JLabel for work TITLE
 		worktitle = new JLabel("WORK EXPERIENCE");
 		worktitle.setBounds(470, 400, 200, 20);
 		worktitle.setFont(new Font("Gotham", Font.BOLD, 15));
-		
+
 		// JLabels for work desc TITLE
 		workdesc = new JLabel("*Type information for different jobs each on a new line*");
 		workdesc.setBounds(410, 420, 320, 20);
 		workdesc.setFont(new Font("Open Sans", Font.ITALIC, 10));
-		
+
 		// JLabels for work desc2 TITLE
 		workdesc2 = new JLabel("*Seperate work done for each job with commas*");
 		workdesc2.setBounds(445, 435, 320, 20);
 		workdesc2.setFont(new Font("Open Sans", Font.ITALIC, 8));
-				
+
 		// JLabels for work
 		jobs = new JLabel("JOBS");
 		jobs.setBounds(100, 460, 200, 20);
 		jobs.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		positions = new JLabel("POSITIONS");
 		positions.setBounds(245, 460, 200, 20);
 		positions.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		workdone = new JLabel("WORK DONE");
 		workdone.setBounds(430, 460, 200, 20);
 		workdone.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		dates = new JLabel("DATES FROM - TO");
 		dates.setBounds(630, 460, 200, 20);
 		dates.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		workcity = new JLabel("CITY");
 		workcity.setBounds(855, 460, 200, 20);
 		workcity.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		workstate = new JLabel("STATE");
 		workstate.setBounds(980, 460, 200, 20);
 		workstate.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		
+
+
 		// JLabel for skills TITLE
 		skillstitle = new JLabel("SKILLS");
 		skillstitle.setBounds(515, 600, 200, 20);
 		skillstitle.setFont(new Font("Gotham", Font.BOLD, 15));
-		
+
 		// JLabels for work desc TITLE
 		skillsdesc = new JLabel("*Type each skill on a new line*");
 		skillsdesc.setBounds(470, 620, 320, 20);
 		skillsdesc.setFont(new Font("Open Sans", Font.ITALIC, 10));
-				
+
 		// JLabels for skills
 		technologyskills = new JLabel("TECHNOLOGY SKILLS");
 		technologyskills.setBounds(220, 650, 200, 20);
 		technologyskills.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		languageskills = new JLabel("LANGUAGE SKILLS");
 		languageskills.setBounds(480, 650, 200, 20);
 		languageskills.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
+
 		otherskills = new JLabel("OTHER SKILLS");
 		otherskills.setBounds(740, 650, 200, 20);
 		otherskills.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		
-		
+
+
+
 		// JTextFields for personal information
 		input_firstname = new JTextField(10);
 		input_firstname.setBounds(150, 50, 150, 20);
-		
+
 		input_lastname = new JTextField(10);
 		input_lastname.setBounds(150, 80, 150, 20);
-	
+
 		input_address = new JTextField(10);
 		input_address.setBounds(150, 110, 150, 20);
-		
+
 		input_city = new JTextField(10);
 		input_city.setBounds(150, 140, 150, 20);
-		
+
 		input_state = new JTextField(10);
 		input_state.setBounds(150, 170, 150, 20);
-		
+
 		input_zip = new JTextField(10);
 		input_zip.setBounds(150, 200, 150, 20);
-		
+
 		input_email = new JTextField(10);
 		input_email.setBounds(150, 230, 150, 20);
-		
+
 		input_phone = new JTextField(10);
 		input_phone.setBounds(150, 260, 150, 20);
-		
-		
+
+
 		// JTextField for objective
 		input_objective = new JTextField(10);
 		input_objective.setBounds(115, 340, 200, 20);		
-		
-		
+
+
 		// JTextFields for education
 		input_university = new JTextField(10);
 		input_university.setBounds(470, 50, 170, 20);
-		
+
 		input_university_city = new JTextField(10);
 		input_university_city.setBounds(470, 80, 170, 20);
-		
+
 		input_university_state = new JTextField(10);
 		input_university_state.setBounds(720, 80, 80, 20);
-		
+
 		input_university_graduationdate = new JTextField(10);
 		input_university_graduationdate.setBounds(530, 120, 90, 20);
-				
+
 		input_university_gpa = new JTextField(10);
 		input_university_gpa.setBounds(450, 150, 50, 20);
-		
+
 		input_university_degree = new JTextField(10);
 		input_university_degree.setBounds(720, 120, 170, 20);
-		
+
 		input_highschool = new JTextField(10);
 		input_highschool.setBounds(480, 220, 170, 20);
-		
+
 		input_highschool_city = new JTextField(10);
 		input_highschool_city.setBounds(480, 250, 170, 20);
-		
+
 		input_highschool_state = new JTextField(10);
 		input_highschool_state.setBounds(720, 250, 80, 20);
-		
+
 		input_highschool_graduationdate = new JTextField(10);
 		input_highschool_graduationdate.setBounds(530, 290, 90, 20);
-		
+
 		input_highschool_diploma = new JTextField(10);
 		input_highschool_diploma.setBounds(760, 290, 110, 20);
-		
+
 		input_highschool_gpa = new JTextField(10);
 		input_highschool_gpa.setBounds(450, 320, 50, 20);
-		
-		
-		
+
+
+
 		// JTextAreas for work
 		input_jobs = new JTextArea(5, 15);
 		scroll1 = new JScrollPane(input_jobs, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll1.setBounds(50, 490, 140, 100);
-		
+
 		input_positions = new JTextArea(5, 15);
 		scroll2 = new JScrollPane(input_positions, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll2.setBounds(210, 490, 140, 100);
-		
+
 		input_workdone = new JTextArea(5, 15);
 		scroll3 = new JScrollPane(input_workdone, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll3.setBounds(370, 490, 200, 100);
-		
+
 		input_dates = new JTextArea(5, 15);
 		scroll4 = new JScrollPane(input_dates, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll4.setBounds(590, 490, 200, 100);
-		
+
 		input_workcity = new JTextArea(5, 15);
 		scroll5 = new JScrollPane(input_workcity, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll5.setBounds(810, 490, 120, 100);
-			
+
 		input_workstate = new JTextArea(5, 15);
 		scroll6 = new JScrollPane(input_workstate, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll6.setBounds(950, 490, 100, 100);
-		
-		
+
+
 		// JTextAreas for skills
 		input_technologyskills = new JTextArea(5, 15);
 		scroll7 = new JScrollPane(input_technologyskills, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll7.setBounds(215, 670, 140, 100);
-		
+
 		input_languageskills = new JTextArea(5, 15);
 		scroll8 = new JScrollPane(input_languageskills, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll8.setBounds(470, 670, 140, 100);
-		
+
 		input_otherskills = new JTextArea(5, 15);
 		scroll9 = new JScrollPane(input_otherskills, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroll9.setBounds(720, 670, 140, 100);
-		
-		
-		
+
+
+
 		// JButtons for reset and generate
 		button1 = new JButton("Reset");
 		button1.setBounds(950, 110, 90, 80);
@@ -447,7 +447,7 @@ public class GUI {
 		button1.setForeground(Color.CYAN);
 		button1.setFont(new Font("Open Sans", Font.BOLD, 16));
 
-		
+
 		button2 = new JButton("Generate");
 		button2.setBounds(950, 210, 90, 80);
 		button2.setBackground(Color.DARK_GRAY);
@@ -455,29 +455,29 @@ public class GUI {
 		button2.setForeground(Color.CYAN);
 		button2.setFont(new Font("Open Sans", Font.BOLD, 16));
 	}
-	
-	
+
+
 	// setUpGUI method - sets up the GUI
 	public void setUpGUI() {
-		
+
 		// sets size of frame created in constructor
 		frame.setSize(width, height);
 		// set title of frame created in constructor
 		frame.setTitle("Resume Builder");
-		
-		
+
+
 		// creates container object and 
 		// sets to getContentPane method from the JFrame "frame"
 		Container cp = frame.getContentPane();
-		
+
 		// content pane calls method setLayout and sets it to null - no layout is used
 		cp.setLayout(null);
-		
+
 		// content pane sets background color
 		cp.setBackground(Color.LIGHT_GRAY);
-		
-		
-		
+
+
+
 		// adds labels to content pane
 		cp.add(personalinfotitle);
 		cp.add(firstname);
@@ -488,7 +488,7 @@ public class GUI {
 		cp.add(zip);
 		cp.add(email);
 		cp.add(phone);
-		
+
 		cp.add(objectivetitle);
 		cp.add(objective);
 
@@ -505,7 +505,7 @@ public class GUI {
 		cp.add(highschool_graduationdate);
 		cp.add(highschool_diploma);
 		cp.add(highschool_gpa);
-		
+
 		cp.add(worktitle);
 		cp.add(workdesc);
 		cp.add(workdesc2);
@@ -515,13 +515,13 @@ public class GUI {
 		cp.add(dates);
 		cp.add(workcity);
 		cp.add(workstate);
-		
+
 		cp.add(skillstitle);
 		cp.add(skillsdesc);
 		cp.add(technologyskills);
 		cp.add(languageskills);
 		cp.add(otherskills);
-		
+
 		// adds textfields to content pane
 		cp.add(input_firstname);
 		cp.add(input_lastname);
@@ -531,9 +531,9 @@ public class GUI {
 		cp.add(input_zip);
 		cp.add(input_email);
 		cp.add(input_phone);
-		
+
 		cp.add(input_objective);
-		
+
 		cp.add(input_university);
 		cp.add(input_university_city);
 		cp.add(input_university_state);
@@ -546,7 +546,7 @@ public class GUI {
 		cp.add(input_highschool_graduationdate);
 		cp.add(input_highschool_diploma);
 		cp.add(input_highschool_gpa);
-					
+
 		// adds textareas and scrollpanes to content pane
 		cp.add(scroll1);
 		cp.add(scroll2);
@@ -554,48 +554,48 @@ public class GUI {
 		cp.add(scroll4);
 		cp.add(scroll5);
 		cp.add(scroll6);
-		
+
 		cp.add(scroll7);
 		cp.add(scroll8);
 		cp.add(scroll9);
-				
+
 		// adds buttons to content pane
 		cp.add(button1);
 		cp.add(button2);	
-		
-		
-		
+
+
+
 		// ends program when it is closed
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		
-		
+
+
 		// allows the GUI to be visible
 		// always do this last, after everything else is set
 		frame.setVisible(true);
 	}
-	
-	
+
+
 	// setUpButtonListeners method - sets up what happens when the buttons are clicked
 	public void setUpButtonListeners(){
-		
+
 		// creates an ActionListener object
 		ActionListener buttonListener = new ActionListener() {
-			
+
 			// actionPerformed method - what happens when a button is clicked
 			public void actionPerformed(ActionEvent ae) {
-				
+
 				// EventSource - which button was clicked
 				Object o = ae.getSource();
-				
+
 				// if button clicked was reset button
 				if (o == button1) {
-					
+
 					// call resetInput method
 					resetInput();
 				}
 				// else if button clicked was generate button
 				else if (o == button2) {			
-					
+
 					// call writeToPDF method
 					try {
 						writeToPDF();
@@ -605,20 +605,20 @@ public class GUI {
 				}
 			}			
 		};
-		
-		
+
+
 		// button calls the method addActionListener and uses the ActionListener object created above
 		// so when an action is performed on the button, it uses the actionPerformed method above
 		button1.addActionListener(buttonListener);	
-		
+
 		// add bustonListener to button2
 		button2.addActionListener(buttonListener);		
 	}
-	
-	
+
+
 	// resetInput method - resets all input fields
 	private void resetInput() {
-		
+
 		// sets all input fields to blank
 		input_firstname.setText("");
 		input_lastname.setText("");
@@ -651,26 +651,26 @@ public class GUI {
 		input_languageskills.setText("");
 		input_otherskills.setText("");	
 	}
-	
-	
+
+
 	// writeToPDF method - creates PDF filed based on user inputs
 	private void writeToPDF() throws IOException {
 
 		// destination to save PDF file
-	    //String dest = "/Users/salemananwari/desktop/testpdf.pdf";
-		
+		//String dest = "/Users/salemananwari/desktop/testpdf.pdf";
+
 		// initialize PDF writer
 		//PdfWriter writer = new PdfWriter((new File(dest)));
-	    
+
 		// adds JFileChooser object to JFrame
 		// uses JFileChooser to be able to choose destination of where to save file
-	    int userSelection = chooser.showSaveDialog(frame);
+		int userSelection = chooser.showSaveDialog(frame);
 		if (userSelection == JFileChooser.APPROVE_OPTION) {
-			
+
 			File fileToSave = chooser.getSelectedFile();
-			
+
 			try {
-				
+
 				// initialize PDF writer with file selected from JFileChooser (and add automatic .pdf extension to it)
 				PdfWriter writer = new PdfWriter(new FileOutputStream(fileToSave + ".pdf"));
 				// initialize PDF document
@@ -687,9 +687,9 @@ public class GUI {
 				// style for entire document except title
 				Style style = new Style();
 				style.setFontSize(11);
-				
-				
-				
+
+
+
 				// title being added
 				Style titlestyle = new Style();
 				titlestyle.setFontSize(16).setBold();
@@ -703,7 +703,7 @@ public class GUI {
 				document.add(title2);
 
 				if (input_address.getText().isEmpty() == false) {
-					
+
 					Paragraph title3 = new Paragraph();
 					addEmptyLine(title3, 1);
 					title3.add(new Text("Current Address: ").addStyle(style).setBold());
@@ -716,13 +716,13 @@ public class GUI {
 					title4.add(new Text("----------------------------------------------------------------------------------------------------------------------------------").setBold());
 					document.add(title4);
 				}
-				
-				
-				
+
+
+
 				// objective being added      
 				// if they know what their objective is
 				if (input_objective.getText().isEmpty() == false) {
-				
+
 					Paragraph objective = new Paragraph();
 					addEmptyLine(objective, 1);
 					objective.add(new Text("OBJECTIVE").addStyle(style).setBold());
@@ -731,9 +731,9 @@ public class GUI {
 					objective.add(new Text(input_objective.getText()).addStyle(style));
 					document.add(objective);
 				}
-				
-				
-				
+
+
+
 				// education being added    
 				// if they haven't went to university but have gone to high school
 				if (input_university.getText().isEmpty() == true && input_highschool.getText().isEmpty() == false) {
@@ -765,35 +765,7 @@ public class GUI {
 				}
 				// if they went to university but didn't go to high school
 				else if (input_university.getText().isEmpty() == false && input_highschool.getText().isEmpty() == true) {
-						
-						// university being added
-						Paragraph education1 = new Paragraph();
-						addEmptyLine(education1, 1);
-						education1.add(new Text("EDUCATION").addStyle(style).setBold());
-						education1.add(new Tab());
-						education1.addTabStops(new TabStop(125, TabAlignment.LEFT));
-						education1.add(new Text(input_university.getText()).addStyle(style).setBold());
-						education1.add(new Text(", " + input_university_city.getText() + ", " + input_university_state.getText()).addStyle(style));
-						education1.add(new Tab());
-						education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
-						education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
-						document.add(education1);   
-						
-						Paragraph education2 = new Paragraph();
-						education2.add(new Tab());
-						education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
-						education2.add(new Text(input_university_degree.getText()).addStyle(style)).setItalic();
-						document.add(education2);
 
-						Paragraph education3 = new Paragraph();
-						education3.add(new Tab());
-						education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
-						education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
-						document.add(education3);	
-				}
-				// if they went to both university and high school
-				else if (input_university.getText().isEmpty() == false && input_highschool.getText().isEmpty() == false) {
-					
 					// university being added
 					Paragraph education1 = new Paragraph();
 					addEmptyLine(education1, 1);
@@ -806,7 +778,7 @@ public class GUI {
 					education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
 					education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
 					document.add(education1);   
-					
+
 					Paragraph education2 = new Paragraph();
 					education2.add(new Tab());
 					education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
@@ -818,7 +790,35 @@ public class GUI {
 					education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
 					document.add(education3);	
-					
+				}
+				// if they went to both university and high school
+				else if (input_university.getText().isEmpty() == false && input_highschool.getText().isEmpty() == false) {
+
+					// university being added
+					Paragraph education1 = new Paragraph();
+					addEmptyLine(education1, 1);
+					education1.add(new Text("EDUCATION").addStyle(style).setBold());
+					education1.add(new Tab());
+					education1.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education1.add(new Text(input_university.getText()).addStyle(style).setBold());
+					education1.add(new Text(", " + input_university_city.getText() + ", " + input_university_state.getText()).addStyle(style));
+					education1.add(new Tab());
+					education1.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
+					education1.add(new Text(input_university_graduationdate.getText()).addStyle(style));
+					document.add(education1);   
+
+					Paragraph education2 = new Paragraph();
+					education2.add(new Tab());
+					education2.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education2.add(new Text(input_university_degree.getText()).addStyle(style)).setItalic();
+					document.add(education2);
+
+					Paragraph education3 = new Paragraph();
+					education3.add(new Tab());
+					education3.addTabStops(new TabStop(125, TabAlignment.LEFT));
+					education3.add(new Text("GPA: " + input_university_gpa.getText()).addStyle(style));
+					document.add(education3);	
+
 					// high school being added
 					Paragraph education4 = new Paragraph();
 					addEmptyLine(education4, 1);
@@ -843,9 +843,9 @@ public class GUI {
 					education6.add(new Text("GPA: " + input_highschool_gpa.getText()).addStyle(style));
 					document.add(education6);
 				}
-				
-				
-				
+
+
+
 				// splitting job info textareas line by line
 				String[] jobs = input_jobs.getText().split("\\n");
 				String[] cities = input_workcity.getText().split("\\n");
@@ -853,8 +853,8 @@ public class GUI {
 				String[] dates = input_dates.getText().split("\\n");
 				String[] positions = input_positions.getText().split("\\n");
 				String[] workdone = input_workdone.getText().split("\\n");
-				
-				
+
+
 				// work being added    
 				// if they have worked before
 				if (input_jobs.getText().isEmpty() == false) {
@@ -924,19 +924,19 @@ public class GUI {
 						}      
 					}
 				}
-				
-				
-				
+
+
+
 				// splitting skills info textareas line by line
 				String[] technologyskills = input_technologyskills.getText().split("\\n");
 				String[] languageskills = input_languageskills.getText().split("\\n");
 				String[] otherskills = input_otherskills.getText().split("\\n");
-				
-				
+
+
 				// skills being added         
 				// if they have technology skills, language skills, and other skills
 				if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == false) {
-					
+
 					// technology skills being added
 					Paragraph techskills = new Paragraph();
 					addEmptyLine(techskills, 1);
@@ -952,7 +952,7 @@ public class GUI {
 					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					techskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(techskills2);
-					
+
 					// all tech skills being added
 					Paragraph techskills3 = new Paragraph();   
 					for (int i = 0; i < technologyskills.length; i++) {
@@ -963,9 +963,9 @@ public class GUI {
 						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
 						document.add(techskills3);
 					}
-					
-					
-					
+
+
+
 					// language skills being added    
 					Paragraph langskills = new Paragraph();
 					addEmptyLine(langskills, 1);
@@ -979,7 +979,7 @@ public class GUI {
 					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					langskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(langskills2);
-					
+
 					// all lang skills being added
 					Paragraph langskills3 = new Paragraph();
 					for (int i = 0; i < languageskills.length; i++) {
@@ -990,9 +990,9 @@ public class GUI {
 						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
 						document.add(langskills3);
 					}
-					
-					
-					
+
+
+
 					// other skills being added    
 					Paragraph other_skills = new Paragraph();
 					addEmptyLine(other_skills, 1);
@@ -1006,7 +1006,7 @@ public class GUI {
 					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(other_skills2);
-					
+
 					// all other skills being added
 					Paragraph other_skills3 = new Paragraph();
 					for (int i = 0; i < otherskills.length; i++) {
@@ -1020,7 +1020,7 @@ public class GUI {
 				}
 				// if they have technology skills and language skills but no other skills
 				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == true) {
-					
+
 					// technology skills being added
 					Paragraph techskills = new Paragraph();
 					addEmptyLine(techskills, 1);
@@ -1036,7 +1036,7 @@ public class GUI {
 					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					techskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(techskills2);
-					
+
 					// all tech skills being added
 					Paragraph techskills3 = new Paragraph();   
 					for (int i = 0; i < technologyskills.length; i++) {
@@ -1047,9 +1047,9 @@ public class GUI {
 						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
 						document.add(techskills3);
 					}
-					
-					
-					
+
+
+
 					// language skills being added    
 					Paragraph langskills = new Paragraph();
 					addEmptyLine(langskills, 1);
@@ -1063,7 +1063,7 @@ public class GUI {
 					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					langskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(langskills2);
-					
+
 					// all lang skills being added
 					Paragraph langskills3 = new Paragraph();
 					for (int i = 0; i < languageskills.length; i++) {
@@ -1077,7 +1077,7 @@ public class GUI {
 				}
 				// if they have technology skills only
 				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == true) {
-					
+
 					// technology skills being added
 					Paragraph techskills = new Paragraph();
 					addEmptyLine(techskills, 1);
@@ -1093,7 +1093,7 @@ public class GUI {
 					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					techskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(techskills2);
-					
+
 					// all tech skills being added
 					Paragraph techskills3 = new Paragraph();   
 					for (int i = 0; i < technologyskills.length; i++) {
@@ -1107,7 +1107,7 @@ public class GUI {
 				}
 				// if they have technology skills and other skills but no language skills
 				else if (input_technologyskills.getText().isEmpty() == false && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == false) {
-					
+
 					// technology skills being added
 					Paragraph techskills = new Paragraph();
 					addEmptyLine(techskills, 1);
@@ -1123,7 +1123,7 @@ public class GUI {
 					techskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					techskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(techskills2);
-					
+
 					// all tech skills being added
 					Paragraph techskills3 = new Paragraph();   
 					for (int i = 0; i < technologyskills.length; i++) {
@@ -1134,9 +1134,9 @@ public class GUI {
 						techskills3.add(new Text(" - " + technologyskills[i]).addStyle(style));
 						document.add(techskills3);
 					}
-					
-					
-					
+
+
+
 					// other skills being added    
 					Paragraph other_skills = new Paragraph();
 					addEmptyLine(other_skills, 1);
@@ -1150,7 +1150,7 @@ public class GUI {
 					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(other_skills2);
-					
+
 					// all other skills being added
 					Paragraph other_skills3 = new Paragraph();
 					for (int i = 0; i < otherskills.length; i++) {
@@ -1164,7 +1164,7 @@ public class GUI {
 				}
 				// if they have language skills and other skills but no technology skills
 				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == false) {
-					
+
 					// language skills being added
 					Paragraph langskills = new Paragraph();
 					addEmptyLine(langskills, 1);
@@ -1180,7 +1180,7 @@ public class GUI {
 					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					langskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(langskills2);
-					
+
 					// all lang skills being added
 					Paragraph langskills3 = new Paragraph();
 					for (int i = 0; i < languageskills.length; i++) {
@@ -1191,9 +1191,9 @@ public class GUI {
 						langskills3.add(new Text(" - " + languageskills[i]).addStyle(style));
 						document.add(langskills3);
 					}
-					
-					
-					
+
+
+
 					// other skills being added    
 					Paragraph other_skills = new Paragraph();
 					addEmptyLine(other_skills, 1);
@@ -1207,7 +1207,7 @@ public class GUI {
 					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(other_skills2);
-					
+
 					// all other skills being added
 					Paragraph other_skills3 = new Paragraph();
 					for (int i = 0; i < otherskills.length; i++) {
@@ -1221,7 +1221,7 @@ public class GUI {
 				}
 				// if they have language skills only
 				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == false && input_otherskills.getText().isEmpty() == true) {
-					
+
 					// language skills being added
 					Paragraph langskills = new Paragraph();
 					addEmptyLine(langskills, 1);
@@ -1237,7 +1237,7 @@ public class GUI {
 					langskills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					langskills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(langskills2);
-					
+
 					// all lang skills being added
 					Paragraph langskills3 = new Paragraph();
 					for (int i = 0; i < languageskills.length; i++) {
@@ -1251,7 +1251,7 @@ public class GUI {
 				}
 				// if they have other skills only
 				else if (input_technologyskills.getText().isEmpty() == true && input_languageskills.getText().isEmpty() == true && input_otherskills.getText().isEmpty() == false) {
-					
+
 					// other skills being added
 					Paragraph other_skills = new Paragraph();
 					addEmptyLine(other_skills, 1);
@@ -1267,7 +1267,7 @@ public class GUI {
 					other_skills2.addTabStops(new TabStop(125, TabAlignment.LEFT));
 					other_skills2.add(new Text("------------------------").addStyle(style).setBold());
 					document.add(other_skills2);
-					
+
 					// all other skills being added
 					Paragraph other_skills3 = new Paragraph();
 					for (int i = 0; i < otherskills.length; i++) {
@@ -1279,12 +1279,12 @@ public class GUI {
 						document.add(other_skills3);
 					}
 				}
-				
-				
-				
+
+
+
 				// close document
 				document.close();
-				
+
 				JOptionPane.showMessageDialog(null, "Resume Generated!");
 			}
 			catch(Exception e) {
@@ -1293,10 +1293,10 @@ public class GUI {
 		}
 	}
 
-	
+
 	// addEmptyLine method - adds empty lines to paragraphs
 	private static void addEmptyLine(Paragraph paragraph, int number) {
-		
+
 		for (int i = 0; i < number; i++) {
 			paragraph.add(new Paragraph("\n"));
 		}
