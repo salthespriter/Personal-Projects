@@ -2,6 +2,10 @@
 // Project Name: *Resume Builder*
 // ResumeBuilder.java
 
+// Use the following commands to run the program in terminal -
+// mvn compile
+// mvn exec:java -Dexec.mainClass=ResumeBuilder
+
 public class ResumeBuilder{
 
 	public static void main(String[] args){
