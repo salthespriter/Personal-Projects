@@ -1285,9 +1285,12 @@ public class GUI {
 				// close document
 				document.close();
 
+				// JOptionPane success message
 				JOptionPane.showMessageDialog(null, "Resume Generated!");
 			}
 			catch(Exception e) {
+				
+				// JOptionPane error message
 				JOptionPane.showMessageDialog(null, e);
 			}
 		}
